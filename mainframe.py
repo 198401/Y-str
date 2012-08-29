@@ -4,7 +4,7 @@
 Module implementing Y-str.
 """
 
-from PyQt4.QtGui import QMainWindow
+from PyQt4.QtGui import QMainWindow,QTableWidgetItem
 from PyQt4.QtCore import pyqtSignature
 
 from Ui_mainframe import Ui_MainWindow
@@ -163,8 +163,8 @@ class Y_str(QMainWindow, Ui_MainWindow):
         result=[]
         if len(strs)>len('id,ref,Population,location,SNP,HG,'):
             import sys,os,sqlite3
-            DB_HOME_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))
-            conn=sqlite3.connect(DB_HOME_DIR+'/str.db')
+#            DB_HOME_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))+'/str.db'
+            conn=sqlite3.connect('str.db')
             cu=conn.cursor()
             sql = 'select '+strs+' from'+' str'+' where id>0'+wstrs
             cu.execute(sql)
@@ -177,18 +177,18 @@ class Y_str(QMainWindow, Ui_MainWindow):
                     newnow.append(sum)
                     result.append(newnow)
             result.sort(key=lambda x:x[-1])
-            for x in result:
-                print x
+#            for x in result:
+#                print x
             labels.append('steps')
             self.tableWidget.setRowCount(len(result))  
             self.tableWidget.setColumnCount(len(a)+7)
             self.tableWidget.setHorizontalHeaderLabels(labels)
+ 
             for i in range(self.tableWidget.rowCount()):  
                 for j in range(self.tableWidget.columnCount()):  
-                    cnt = '(%d,%d)'% (i,j)  
-                    self.tableWidget.setItem(i,j,"sd") 
-            
-        raise NotImplementedError
+                    newItem = QTableWidgetItem(str(result[i][j])) 
+                    self.tableWidget.setItem(i,j,newItem) 
+
 
 if __name__ == "__main__":  
     import PyQt4, PyQt4.QtGui, sys
