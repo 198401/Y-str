@@ -188,11 +188,8 @@ class Y_str(QMainWindow, Ui_MainWindow):
                 for j in range(self.tableWidget.columnCount()):  
                     newItem = QTableWidgetItem(str(result[i][j])) 
                     self.tableWidget.setItem(i,j,newItem) 
-                    
-            self.pushButton_2.setEnabled(True)
 
-    def on_pushButton_2_clicked(self):
-        print 5
+
 if __name__ == "__main__":  
     import PyQt4, PyQt4.QtGui, sys
     app = PyQt4.QtGui.QApplication(sys.argv)    
