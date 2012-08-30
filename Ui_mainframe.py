@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\python\y-str\mainframe.ui'
+# Form implementation generated from reading ui file 'D:\python\y-str\Y-str\mainframe.ui'
 #
-# Created: Tue Aug 28 14:21:35 2012
+# Created: Thu Aug 30 08:23:23 2012
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -272,8 +272,13 @@ class Ui_MainWindow(object):
         self.spinBox_26.setGeometry(QtCore.QRect(190, 140, 42, 22))
         self.spinBox_26.setProperty("value", 10)
         self.spinBox_26.setObjectName(_fromUtf8("spinBox_26"))
+        self.pushButton_2 = QtGui.QPushButton(self.groupBox)
+        self.pushButton_2.setEnabled(False)
+        self.pushButton_2.setGeometry(QtCore.QRect(730, 150, 75, 23))
+        self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.tableWidget = QtGui.QTableWidget(self.centralWidget)
         self.tableWidget.setGeometry(QtCore.QRect(10, 200, 901, 541))
+        self.tableWidget.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
@@ -391,6 +396,7 @@ class Ui_MainWindow(object):
         self.checkBox_25.setText(QtGui.QApplication.translate("MainWindow", "YCAIIa", None, QtGui.QApplication.UnicodeUTF8))
         self.checkBox_26.setText(QtGui.QApplication.translate("MainWindow", "YCAIIb", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton.setText(QtGui.QApplication.translate("MainWindow", "matching", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_2.setText(QtGui.QApplication.translate("MainWindow", "save", None, QtGui.QApplication.UnicodeUTF8))
 
 
 if __name__ == "__main__":
